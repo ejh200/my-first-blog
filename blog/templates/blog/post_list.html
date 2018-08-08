@@ -8,17 +8,20 @@
 		<h1><a href="">Sexy Eom's Tech&etc BLog</a></h1>
 		<p>This website is made with Django</p>
 	</div>
-
+{% for post in posts %}
 	<div>
-		<p> Published: 07.AUG.2018</p>
-		<h2><a href="">My first post</a></h2>
-		<p>Hi there, I am Junghyun EOM and I'm currently studying a 
+		
+		<h2><a href="">{{  post.title  }}</a></h2>	
+		<p>{{  post.text|linebreaksbr  }}</p>	
+		
+		<!-- <p>Hi there, I am Junghyun EOM and I'm currently studying a 
 			Bachelor of Scince in Information Technology at <a href="https://www.uts.edu.au/">University of Technology Sydney</a>.<br>
-		I am really interested in todays Web technologies Fornt-end, and Back-end both.</p>	
+		I am really interested in todays Web technologies Fornt-end, and Back-end both.</p> -->	
+		<p> published: {{ post.published_date }}</p>
 	</div>
-
+{% endfor %}
 	<div>
-		<p>Published: 07.AUG.2018</p>
+		<!-- <p>Published: 07.AUG.2018</p> -->
 	</div>
 
 
