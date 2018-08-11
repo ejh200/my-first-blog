@@ -1,30 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Sexy EOM's Techblog</title>
-</head>
-<body>
-	<div>
-		<h1><a href="">Sexy Eom's Tech&etc BLog</a></h1>
-		<p>This website is made with Django</p>
-	</div>
-{% for post in posts %}
-	<div>
-		
-		<h2><a href="">{{  post.title  }}</a></h2>	
-		<p>{{  post.text|linebreaksbr  }}</p>	
-		
-		<!-- <p>Hi there, I am Junghyun EOM and I'm currently studying a 
-			Bachelor of Scince in Information Technology at <a href="https://www.uts.edu.au/">University of Technology Sydney</a>.<br>
-		I am really interested in todays Web technologies Fornt-end, and Back-end both.</p> -->	
-		<p> published: {{ post.published_date }}</p>
-	</div>
-{% endfor %}
-	<div>
-		<!-- <p>Published: 07.AUG.2018</p> -->
-	</div>
+{% extends 'blog/base.html' %}
 
-
-	
-</body>
-</html>
+{% block content %}
+	{% for post in posts %}
+		<div class="post">
+			<div class="date">
+				<p> published: {{ post.published_date }}</p>
+			</div>
+			<h2><a href="{% url 'post_detail' pk=post.pk %}">{{  post.title  }}</a></h2>	
+			<p>{{  post.text|linebreaksbr  }}</p>	
+		</div>
+	{% endfor %}
+{% endblock %}
