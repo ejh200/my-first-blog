@@ -45,12 +45,12 @@ This is a class: page-header group.
 	color: #828282;
 }
 
-.save
+.save, .btn
 {
 	float: right;
 }
 
-.post-form txtarea, .post-form input
+.post-form textarea, .post-form input
 {
 	width: 100%;
 }
@@ -72,3 +72,4 @@ This is a class: page-header group.
 {
 	color: #000000;
 }
+
